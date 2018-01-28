@@ -4,4 +4,6 @@ While this is for the now defunct mentalray renderer it could still be of some i
 
 Simply start by including _cpc_mentalray.h in your project. 
 
-Actual mr shaders are those .cpp out of folders, while folders contain implementations and data stuctures. 
+Actual mr shaders are those .cpp out of folders, while folders contain implementations and data stuctures.
+
+If you don't plan to use mentalray and just use point containers, surfel nodes, octree etc. to collect and process points just disable mentalray support in the _cpc_mentalray.h by setting to 0 __MENTALRAY_ENHANCED__	define.
