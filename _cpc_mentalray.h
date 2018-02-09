@@ -55,24 +55,24 @@ using namespace cpc;
 
 /// ///////////////////////////////////////////////////////////////////////////////////////////////////
 #if	__SSE2_ENHANCED__
-typedef iPointList<float, DATA_NSLOTS_AO +DATA_RESULT_SLOT, iPListDataStorage_MemPool>							_pointlistT;
-typedef iPointList<float, DATA_NSLOTS_SSS +DATA_RESULT_SLOT, iPListDataStorage_MemPool>							_pointlistSSS;
-typedef iPointList<float, DATA_NSLOTS_BAKE +DATA_RESULT_SLOT, iPListDataStorage_MemPool>						_pointlistBake;
-typedef iPointList<float, DATA_NSLOTS_BAKE +DATA_RESULT_SLOT, iPListDataStorage_MemPool>						_pointlistGI;
+typedef iPointList<float, DATA_NSLOTS_AO +DATA_RESULT_SLOT, iPListDataStorage_MemPool>				_pointlistT;
+typedef iPointList<float, DATA_NSLOTS_SSS +DATA_RESULT_SLOT, iPListDataStorage_MemPool>				_pointlistSSS;
+typedef iPointList<float, DATA_NSLOTS_BAKE +DATA_RESULT_SLOT, iPListDataStorage_MemPool>			_pointlistBake;
+typedef iPointList<float, DATA_NSLOTS_BAKE +DATA_RESULT_SLOT, iPListDataStorage_MemPool>			_pointlistGI;
 #else
-typedef iPointList<float, DATA_NSLOTS_AO +DATA_RESULT_SLOT, iPListDataStorage_MemPool, iPListDataAllocator>		_pointlistT;
+typedef iPointList<float, DATA_NSLOTS_AO +DATA_RESULT_SLOT, iPListDataStorage_MemPool, iPListDataAllocator>	_pointlistT;
 typedef iPointList<float, DATA_NSLOTS_SSS +DATA_RESULT_SLOT, iPListDataStorage_MemPool, iPListDataAllocator>	_pointlistSSS;
 typedef iPointList<float, DATA_NSLOTS_BAKE +DATA_RESULT_SLOT, iPListDataStorage_MemPool, iPListDataAllocator>	_pointlistBake;
 
-typedef iPointList<float, DATA_NSLOTS_BAKE, iPListDataStorage_MemPool, iPListDataAllocator>						_pointlistGI;
-typedef iPointList<float, DATA_NSLOTS_BAKE, iPListDataStorage_Simple, iPListDataAllocator>						iPointListSimple;
+typedef iPointList<float, DATA_NSLOTS_BAKE, iPListDataStorage_MemPool, iPListDataAllocator>			_pointlistGI;
+typedef iPointList<float, DATA_NSLOTS_BAKE, iPListDataStorage_Simple, iPListDataAllocator>			iPointListSimple;
 #endif
 
 
 /// ///////////////////////////////////////////////////////////////////////////////////////////////////
-typedef iOctree<float, _pointlistT, iOctreeNodeStorage_AO>		_octreeT;
+typedef iOctree<float, _pointlistT, iOctreeNodeStorage_AO>	_octreeT;
 typedef iOctree<float, _pointlistSSS, iOctreeNodeStorage_SSS>	_octreeSSS;
-typedef iOctree<float, _pointlistGI, iOctreeNodeStorage_GI>		_octreeGI;
+typedef iOctree<float, _pointlistGI, iOctreeNodeStorage_GI>	_octreeGI;
 
 typedef _octreeT::Node		iOctreeNode;
 typedef _octreeSSS::Node	iOctreeNodeSSS;
@@ -82,15 +82,15 @@ typedef _octreeGI::Node		iOctreeNodeGI;
 /// ///////////////////////////////////////////////////////////////////////////////////////////////////
 template<typename IntegratorT, class PListType, class iOctreeType>
 void microRasterize(	IntegratorT& integrator, 
-						const iVector3& P, const iVector3& N, 
-						float cosConeAngle, float sinConeAngle, float maxSolidAngle, float exactRAngle,
-						PListType* pgi,  iOctreeType* ogi	)
+			const iVector3& P, const iVector3& N, 
+			float cosConeAngle, float sinConeAngle, float maxSolidAngle, float exactRAngle,
+			PListType* pgi,  iOctreeType* ogi	)
 {
 	renderNode(	integrator, 
-				P, N, 
-				cosConeAngle, sinConeAngle,	maxSolidAngle, exactRAngle,
-				DATA_NSLOTS_BAKE, 
-				pgi, ogi );
+			P, N, 
+			cosConeAngle, sinConeAngle,	maxSolidAngle, exactRAngle,
+			DATA_NSLOTS_BAKE, 
+			pgi, ogi );
 }
 
 /// ///////////////////////////////////////////////////////////////////////////////////////////////////
