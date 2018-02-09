@@ -36,8 +36,8 @@
 
 
 #define __MENTALRAY_ENHANCED__	1
-#define __OMP_ENHANCED__		0
-#define __SSE2_ENHANCED__		1
+#define __OMP_ENHANCED__	0
+#define __SSE2_ENHANCED__	1
 #define	__OPENEXR_ENHANCED__	0
 
 
