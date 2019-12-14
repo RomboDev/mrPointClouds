@@ -14,3 +14,6 @@ If you don't plan to use mentalray and just use point containers, surfel nodes, 
 ![Doc4](https://github.com/RomboDev/mrPointClouds/blob/master/Docs/004_PCloud_Bake_SSS.png?raw=true)
 ![Doc5](https://github.com/RomboDev/mrPointClouds/blob/master/Docs/005_PCloud_Eval_SSS.png?raw=true)
 ![Doc6](https://github.com/RomboDev/mrPointClouds/blob/master/Docs/006_PCloud_Examples.png?raw=true)
+![Res1](https://github.com/RomboDev/mrPointClouds/blob/master/Docs/Results/SSS_maya_workflow_002.png?raw=true)
+![Res2](https://github.com/RomboDev/mrPointClouds/blob/master/Docs/Results/cpc_pbgi_cornell_bunny.png?raw=true)
+![Res3](https://github.com/RomboDev/mrPointClouds/blob/master/Docs/Results/pcloud_AO_cornellbox.png?raw=true)
